@@ -31,6 +31,23 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
     }
   }
 
+  String startStatement() {
+    var hour = DateTime.now().hour;
+    if(hour == 12 && hour < 5){
+      return '"We\'ve got one life to live!. Let\'s go all in!"';
+    }
+    else if (hour < 5) {
+      return '"I strongly believe that technology has more to offer. After all, it is the invention of man."';
+    } else if (hour < 10) {
+      return '"There is no time which is late. We all have our own starting point. Push beyond and you will excel."';
+    } else if (hour < 16) {
+      return '"Talent, Money and Grace is the foundation you need. But hardwork, crowns it all to success."';
+    } else if (hour < 20) {
+      return '"Pray that you will never lose yourself in the race. That\'s one thing you will forever regret."';
+    }
+    return 'Never lose out of any offers, we gat your back. ';
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<NavigationProvider>(context);
@@ -234,5 +251,14 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
               ),
             );
           })
-      : SizedBox();
+      : Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          startStatement(),
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      );
 }
