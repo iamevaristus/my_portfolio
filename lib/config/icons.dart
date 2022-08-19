@@ -8,6 +8,11 @@ Icon homeIcon = Icon(
   color: mainColor,
 );
 
+Icon menuIcon = Icon(
+  Icons.menu_sharp,
+  color: mainColor,
+);
+
 Icon aboutIcon = Icon(
   Icons.pages_rounded,
   color: mainColor,

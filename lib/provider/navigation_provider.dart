@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NavigationProvider extends ChangeNotifier{
-  bool collapsed = false;
+  bool collapsed = true;
 
   bool get isCollapsed => collapsed;
 
