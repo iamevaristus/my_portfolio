@@ -7,31 +7,42 @@ class AnimatedTextWidget extends StatelessWidget {
   final String firstText;
   final String secondText;
   final String thirdText;
+  final MainAxisAlignment mainAlign;
+  final CrossAxisAlignment crossAlign;
+  final double size;
+  final Color color;
   const AnimatedTextWidget({
     Key? key,
     this.text = "",
     required this.firstText,
     required this.secondText,
-    required this.thirdText
+    required this.thirdText,
+    this.size = 40.0,
+    this.color = Colors.black,
+    this.mainAlign = MainAxisAlignment.start,
+    this.crossAlign = CrossAxisAlignment.center
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: mainAlign,
+      crossAxisAlignment: crossAlign,
       children: <Widget>[
-        const SizedBox(width: 20.0, height: 100.0),
         Text(
           text,
-          style: const TextStyle(fontSize: 43.0),
+          style: TextStyle(fontSize: size, color: color),
         ),
-        const SizedBox(width: 20.0, height: 100.0),
+        const SizedBox(width: 20.0,),
         DefaultTextStyle(
-          style: const TextStyle(
-            fontSize: 40.0,
+          style: TextStyle(
+            fontSize: size,
             fontFamily: 'Horizon',
+            color: color
           ),
           child: AnimatedTextKit(
+            repeatForever: true,
             animatedTexts: [
               RotateAnimatedText(firstText),
               RotateAnimatedText(secondText),
