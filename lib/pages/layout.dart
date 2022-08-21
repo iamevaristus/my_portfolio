@@ -3,6 +3,8 @@ import 'package:website/config/icons.dart';
 import 'package:website/pages/devices/home_desktop.dart';
 import 'package:website/pages/devices/home_phone.dart';
 import 'package:website/pages/devices/home_tablet.dart';
+import 'package:website/pages/screens/contact_page.dart';
+import 'package:website/pages/screens/page_not_found.dart';
 import 'package:website/res/responsive.dart';
 
 class WebDeviceLayout extends StatelessWidget {
@@ -22,9 +24,11 @@ class WebDeviceLayout extends StatelessWidget {
         )
         : null,
       body: const ResponsiveWidget(
-        desktop: DesktopHome(),
+        desktop: DesktopHome(
+        ),
         phone: PhoneHome(),
-        tablet: TabletHome()
+        tablet: TabletHome(
+        )
       ),
     );
   }

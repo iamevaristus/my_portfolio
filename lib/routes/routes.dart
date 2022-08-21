@@ -1,16 +1,16 @@
-const root = "/";
+const String root = "/";
 
 const home = "Home";
-const homeRoute = "/home";
+const String homeRoute = "/home";
 
 const about = "About";
-const aboutRoute = "/about";
+const String aboutRoute = "/about";
 
 const contact = "Contact";
-const contactRoute = "/contact";
+const String contactRoute = "/contact";
 
 const gallery = "Gallery";
-const galleryRoute = "/gallery";
+const String galleryRoute = "/gallery";
 
 class RouteMenu{
   final String name;

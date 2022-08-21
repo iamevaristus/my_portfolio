@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website/config/colors.dart';
 import 'package:website/routes/nav_controller.dart';
-import 'package:website/widgets/drawer.dart';
+import 'package:website/widgets/drawer/drawer.dart';
 
 class DesktopHome extends StatefulWidget {
   const DesktopHome({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _DesktopHomeState extends State<DesktopHome> {
                 Expanded(
                   child: Container(
                   color: Colors.blue,
-                  child: localNav()
+                  child: localNav(),
                   )
                 )
               ],

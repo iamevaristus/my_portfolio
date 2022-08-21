@@ -8,6 +8,7 @@ import 'package:website/routes/nav_controller.dart';
 import 'package:website/routes/routes.dart';
 
 void main() {
+  setupLocator();
   Get.put(NavController());
   runApp(const MyApp());
 }
@@ -22,14 +23,12 @@ class MyApp extends StatelessWidget {
       providers: providers,
       child: GetMaterialApp(
         initialRoute: homeRoute,
-        unknownRoute: GetPage(
-          name: "/not-found",
-          page: () => const PageNotFound(),
-          transition: Transition.native
-        ),
+        unknownRoute: GetPage(name: '/not-found', page: () => PageNotFound(), transition: Transition.fadeIn),
         getPages: [
-          GetPage(name: root, page: () => const WebDeviceLayout())
-        ],
+        GetPage(name: root, page: () {
+          return WebDeviceLayout();
+        }),
+      ],
         debugShowCheckedModeBanner: false,
       ),
     );

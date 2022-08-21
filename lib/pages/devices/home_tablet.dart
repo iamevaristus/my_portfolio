@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website/config/colors.dart';
 import 'package:website/routes/nav_controller.dart';
-import 'package:website/widgets/drawer.dart';
+import 'package:website/widgets/drawer/drawer.dart';
 
 class TabletHome extends StatefulWidget {
   const TabletHome({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _TabletHomeState extends State<TabletHome> {
                 Expanded(
                   child: Container(
                     color: Colors.purple.shade100,
-                    child: localNav(),
+                    child: localNav()
                   )
                 )
               ],

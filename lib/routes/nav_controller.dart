@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
 import 'package:website/routes/router.dart';
 import 'package:website/routes/routes.dart';
 
@@ -17,7 +18,13 @@ class NavController extends GetxController{
 NavController navController = NavController.instance;
 
 Navigator localNav() => Navigator(
-  key: navController.navKey,
+  key: locator<NavController>().navKey,//locator<NavController>().navKey,navController.navKey,
   onGenerateRoute: generateRoute,
   initialRoute: homeRoute,
 );
+
+GetIt locator = GetIt.instance;
+
+void setupLocator() {
+  locator.registerLazySingleton(() => NavController());
+}
